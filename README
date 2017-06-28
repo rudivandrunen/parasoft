@@ -1,0 +1,4 @@
+docker build -t rudivd/test:pdemo pdemo
+docker login
+docker push rudivd/test:pdemo pdemo
+docker run -p 8888:80 rudivd/test:pdemo
