@@ -15,16 +15,18 @@ deploy:
     - script:
         name: mv staticfiles
         code: |
-          rm -rf /usr/share/nginx/html/*
+          rm -rf /usr/share/nginx/html
           ls $WERCKER_SOURCE_DIR
-          cp -Rp $WERCKER_SOURCE_DIR/* /usr/share/nginx/html
+          cp  $WERCKER_SOURCE_DIR/wrapper.sh /
+          chmod 755 /wrapper.sh
+          cp -Rp $WERCKER_SOURCE_DIR/html /usr/share/nginx/
     - internal/docker-push:
         tag: $DOCKER_HUB_TAG
         username: $DOCKER_HUB_USERNAME
         password: $DOCKER_HUB_PASSWORD
         repository: $DOCKER_HUB_REPO
         ports: $DOCKER_PORT
-        cmd: nginx -g 'daemon off;'
+        cmd: /wrapper.sh
         registry:  https://hub.docker.com
         
         
