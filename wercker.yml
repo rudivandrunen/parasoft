@@ -4,8 +4,7 @@ build:
         - script:
           name: system information 
           code: |
-            echo "node version $(node --version) running"
-            echo "npm version $(npm --version) running"
+            echo "placeholder"
             
 deploy:
   box:
