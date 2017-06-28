@@ -25,5 +25,5 @@ deploy:
         password: $DOCKER_HUB_PASSWORD
         repository: $DOCKER_HUB_REPO
         ports: $DOCKER_PORT
-        cmd: nginx -g 'daemon off;'
+        cmd: ./wrapper.sh
         registry:  https://hub.docker.com
