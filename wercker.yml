@@ -28,5 +28,3 @@ deploy:
         ports: $DOCKER_PORT
         cmd: /wrapper.sh
         registry:  https://hub.docker.com
-        
-        
