@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Nginx is running..."
 echo "Parasoft docker demo"
